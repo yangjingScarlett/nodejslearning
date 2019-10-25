@@ -5,14 +5,17 @@
     "main": "server.js",
     "dependencies": {
         "app-root-path": "^2.2.1",
+        "axios-https-proxy-fix": "^0.17.1",
         "dotenv": "^8.0.0",
         "excel4node": "^1.7.0",
         "fs-extra": "^8.1.0",
+        "https-proxy-agent": "^3.0.0",
         "lodash": "^4.17.15",
         "moment": "^2.24.0",
         "nodemailer": "^5.1.1",
         "path": "^0.12.7",
         "pg": "^6.1.2",
+        "request": "^2.88.0",
         "winston": "^3.2.1",
         "yargs": "^14.2.0"
     },
