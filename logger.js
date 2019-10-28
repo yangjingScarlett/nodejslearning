@@ -2,6 +2,7 @@ import path from 'path';
 
 const { createLogger, format, transports } = require('winston');
 const { combine, timestamp, prettyPrint, simple } = format;
+import { IS_DEVELOPMENT } from './config';
 
 const options = {
     infoFile: {
@@ -20,6 +21,10 @@ const options = {
         maxsize: 5242880, // 5MB
         maxFiles: 5,
         colorize: true
+    },
+    console: {
+        level: 'info',
+        format: simple()
     }
 }
 
@@ -36,6 +41,10 @@ const logger = createLogger({
     ],
     exitOnError: false
 });
+
+if (IS_DEVELOPMENT) {
+    logger.add(new transports.Console(options.console));
+}
 
 export default ({
     error: err => {
